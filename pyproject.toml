@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nature-plot-skills"
+version = "0.1.0"
+description = "Agent skill assets for Nature-style publication figures"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Feiyang Huang" }
+]
+keywords = ["agents", "plots", "nature", "matplotlib", "seaborn", "skills"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Visualization",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+  "matplotlib>=3.8",
+  "seaborn>=0.13"
+]
+
+[project.urls]
+Homepage = "https://github.com/fyng/nature_plot_skills"
+Repository = "https://github.com/fyng/nature_plot_skills"
+
+[project.scripts]
+nature-plot-skills = "nature_plot_skills.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nature_plot_skills = [
+  "assets/*.md",
+  "assets/skills/*.md",
+  "assets/skills/*/*.md"
+]

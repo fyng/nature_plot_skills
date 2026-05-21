@@ -25,7 +25,7 @@ class AssetTests(unittest.TestCase):
     def test_skill_can_be_read(self) -> None:
         content = read_skill("nature_publication_figures")
         self.assertIn("Nature Publication Figures", content)
-        self.assertIn("set_nature_style()", content)
+        self.assertIn("Must use concise publication defaults", content)
         self.assertIn("Must size figures in 1.5 inch by 1.5 inch units.", content)
 
     def test_skill_path_points_to_skill_markdown(self) -> None:
@@ -58,7 +58,7 @@ class CliTests(unittest.TestCase):
     def test_cli_prints_skill(self) -> None:
         result = self.run_module("show", "nature_publication_figures")
         self.assertEqual(result.returncode, 0)
-        self.assertIn("Import and run", result.stdout)
+        self.assertIn("Must use concise publication defaults", result.stdout)
         self.assertIn("Must choose a statistical test", result.stdout)
 
 

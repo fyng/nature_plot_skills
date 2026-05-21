@@ -21,10 +21,6 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Visualization",
   "Topic :: Software Development :: Libraries :: Python Modules"
 ]
-dependencies = [
-  "matplotlib>=3.8",
-  "seaborn>=0.13"
-]
 
 [project.urls]
 Homepage = "https://github.com/fyng/nature_plot_skills"

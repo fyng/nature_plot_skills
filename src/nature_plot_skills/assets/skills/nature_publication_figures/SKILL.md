@@ -5,8 +5,6 @@ description: Use when generating or revising publication figures in Python for a
 
 # Nature Publication Figures
 
-Import and run `from nature_plot_skills import set_nature_style; set_nature_style()` before generating or revising Nature-style figures.
-
 ## Stack
 
 - Must use Python plotting code.
@@ -29,17 +27,18 @@ Import and run `from nature_plot_skills import set_nature_style; set_nature_styl
 
 ## Graph rules
 
-- Must include axis lines and tick marks.
-- Must label every axis and put units in parentheses.
+- Must include 1-pt axis lines and outward tick marks.
+- Must label every axis and put units in parentheses if available.
 - Must use an accessible palette with strong contrast under color-vision deficiency.
-- Never add decorative icons, drop shadows, or patterns.
+- Must use no gridlines, and white backgrounds with black text.
 - Never use colored text to encode groups; use marks, boxes, or keylines instead.
-- Consider direct labeling only when it reduces eye travel more than a legend would.
 
 ## Text and annotation
 
 - Must keep all text editable.
+- Must prefer Arial or Helvetica and keep Matplotlib export text editable, including `pdf.fonttype = 42`.
 - Panel letters should be 8 pt bold.
+- Other text should be 5-6 pt regular.
 - Never outline text.
 - Never place text on busy backgrounds.
 - Never allow labels to overlap each other or the plotted data.
@@ -59,9 +58,11 @@ Import and run `from nature_plot_skills import set_nature_style; set_nature_styl
 - Must export line art, text, arrows, boxes, and scale bars as editable vector elements.
 - Must prefer PDF or EPS for final vector export.
 - Must keep artwork in RGB color space.
+- Must supply raster content at 450 dpi or higher.
 
 ## Agent behavior
 
 - When asked for a publication figure, Consider whether a simpler chart form communicates the claim more clearly.
+- If no matplotlib style set function in repo, ask the user if a recyclable style set function should be made with the above rules.
 - When many categories or annotations compete for space, Must solve readability first, even if that means expanding the figure to more size units or splitting into panels.
 - Never optimize for decorative style over legibility, editability, and export correctness.

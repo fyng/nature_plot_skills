@@ -22,7 +22,6 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=["matplotlib>=3.8", "seaborn>=0.13"],
     include_package_data=True,
     package_data={
         "nature_plot_skills": [

@@ -14,14 +14,19 @@ pip install "git+https://github.com/fyng/nature_plot_skills.git"
 
 ## What this package ships
 
-The installed package exposes:
+This repository ships prompt assets, not a plotting API. The installed package exposes:
 
 - One opinionated skill for Nature-style publication figures.
 - A tiny Python API for locating and reading packaged assets.
-- A `set_nature_style()` helper that applies Nature-oriented Matplotlib and Seaborn defaults.
 - A small CLI for printing the installed asset path, listing skills, or showing skill contents.
 
-The package does not auto-register itself with Claude, Codex, Cursor, or GitHub Copilot. `pip install` makes both the helper function and the skill asset available, but you still need to wire the markdown skill into each tool's instruction or skills mechanism.
+The package does not auto-register itself with Claude, Codex, Cursor, or GitHub Copilot. `pip install` only makes the skill available on disk. You still need to wire that asset into each tool's instruction or skills mechanism.
+
+## Skill content
+
+The bundled skill keeps the Nature-specific decisions in markdown, including layout rules, legend placement, accessibility expectations, statistical annotation guidance, and succinct Matplotlib enforcement requirements for fonts, ticks, line weights, backgrounds, editable vector text, and raster export resolution.
+
+This package does not install Matplotlib or Seaborn for you. The skill tells the agent how to use those libraries when figure code is being written.
 
 ## Quick start
 
@@ -46,9 +51,8 @@ python -m nature_plot_skills show nature_publication_figures
 Use the Python API:
 
 ```python
-from nature_plot_skills import asset_root, list_skills, read_skill, set_nature_style
+from nature_plot_skills import asset_root, list_skills, read_skill
 
-set_nature_style()
 print(asset_root())
 print(list_skills())
 print(read_skill("nature_publication_figures"))
@@ -81,4 +85,3 @@ Add the rendered skill text to the project instructions, system prompt, or any l
 ### Codex and other coding agents
 
 Place the rendered skill text in the instruction surface the agent already reads, such as `AGENTS.md`, a repo policy file, or the system prompt used by your orchestration layer.
-

@@ -23,7 +23,6 @@ description: Use when generating or revising publication figures in Python for a
 - Never add an overall title.
 - Never add methodological descriptions inside the figure.
 - Consider terse subplot subtitles only when panel differences are not obvious from axes and labels.
-- Must label multi-panel figures with bold lowercase panel letters.
 
 ## Graph rules
 
